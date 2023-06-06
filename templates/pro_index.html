@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style> 
+        :root{
+    --primary: hsla(347, 81%, 59%, 0.65);
+    --secondary: hsla(230, 96%, 62%, 0.65);
+}
+
+body{
+        
+        background: linear-gradient(135deg, var(--primary), var(--secondary)),
+        url("./image.jfif") no-repeat center center / cover;
+        backdrop-filter: blur(5px);
+        /* background-image: url("./med.jfif"); */
+}
+
+
+h1 {text-align: center;
+color: aliceblue;}
+form {text-align: center;}
+h2{color:aliceblue}
+
+
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Insurance Charges Prediction</title>
+    <link rel ="stylesheet" type = "text/css" href="C:\Users\abhij\OneDrive\Desktop\DATA SCIENCTIST\Visual Studio code\Web Framework\Medical Insurance\static\styles\index.css">
+    <!-- <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/index.css') }}"> -->
+</head>
+
+<body> 
+
+    <h1> Medical Insurance Charges Prediction </h1>
+    <form method="POST" action="/predict_charges">
+
+        <label><b>Age:</b></label>
+        <input type = "text" name = "age">
+        </select>
+
+        <br>
+        <br>
+
+        <label><b>Sex:</b></label>
+        <select name = "sex">
+            <option value = "male">Male</option>
+            <option value = "female">Female</option>
+        </select>
+
+        <br>
+        <br>
+
+        <label><b>BMI:</b></label>
+        <input type = "text" name = "bmi">
+        </select>
+
+        <br>
+        <br>
+
+        <label><b>Children:</b></label>
+        <input type = "text" name = "children">
+        </select>
+
+        <br>
+        <br>
+
+        <label><b>Smoker:</b></label>
+        <label>Yes:</label> <input type = "radio" name= "smoker" value = "yes">
+        <label>No:</label> <input type = "radio" name= "smoker" value = "no">
+
+        <br>
+        <br>
+
+        <label><b>Region:</b></label>
+        <select name = "region">
+            <option value = "northeast">Northeast</option>
+            <option value = "southeast">Southeast</option>
+            <option value = "northwest">Northwest</option>
+            <option value = "southwest">Southwest</option>
+        </select>
+
+        <br>
+        <br>
+
+        <input type = "submit" value="SUBMIT">
+
+        <br>
+
+        <p><b><h2> insurance premium charges will be <b> Rs. {{ prediction }}/-</b> Only </h2></b></p>
+
+
+    </form>
+
+
+</body>
+</html>
